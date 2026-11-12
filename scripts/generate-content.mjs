@@ -47,14 +47,54 @@ function decodeHtmlEntities(value) {
     .trim();
 }
 
-function parseArticles(html) {
-  const dataMatch = html.match(/const\s+timelineData\s*=\s*(\{[\s\S]*?\})\s*const\s*\{types,\s*posts\}/);
+const TIMELINE_PATTERNS = [
+  /const\s+timelineData\s*=\s*/,
+  /const\s*\{\s*types\s*=\s*\[\]\s*,\s*posts\s*=\s*\[\]\s*\}\s*=\s*/,
+];
 
-  if (!dataMatch) {
-    throw new Error('No timelineData found in blog homepage');
+function findObjectEnd(text, start) {
+  let depth = 0;
+  let inString = false;
+  let escaped = false;
+
+  for (let i = start; i < text.length; i += 1) {
+    const char = text[i];
+
+    if (inString) {
+      if (escaped) escaped = false;
+      else if (char === '\\') escaped = true;
+      else if (char === '"') inString = false;
+      continue;
+    }
+
+    if (char === '"') inString = true;
+    else if (char === '{') depth += 1;
+    else if (char === '}') {
+      depth -= 1;
+      if (depth === 0) return i + 1;
+    }
   }
 
-  const timelineData = JSON.parse(dataMatch[1]);
+  return -1;
+}
+
+function extractTimelineData(html) {
+  for (const pattern of TIMELINE_PATTERNS) {
+    const match = pattern.exec(html);
+    if (!match) continue;
+
+    const start = match.index + match[0].length;
+    const end = findObjectEnd(html, start);
+    if (end === -1) continue;
+
+    return JSON.parse(html.slice(start, end));
+  }
+
+  throw new Error('No timeline data found in blog homepage');
+}
+
+function parseArticles(html) {
+  const timelineData = extractTimelineData(html);
   const items = [];
 
   for (const post of timelineData.posts || []) {

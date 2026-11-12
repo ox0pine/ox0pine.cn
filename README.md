@@ -57,14 +57,14 @@ GitHub Actions 已内置自动内容刷新流程，会定时更新文章和仓�
 请帮我获取博客时间线数据，并适配当前项目的生成脚本。
 
 上下文：
-- 博客首页地址是：https://blog.qfpqhyl.top/
+- 博客首页地址是：https://blog.ox0pine.cn/
 - 当前项目里生成内容的脚本在：scripts/generate-content.mjs
 - 目标是提取博客首页时间线里的最近文章，字段只需要：
   - title
   - href
   - date
-- 如果首页没有标准的 <time> 或文章列表标签，请检查页面里的内联 script，看看是否存在类似 `const timelineData = {...}` 的结构。
-- 如果找到了 timelineData，请从其中的 posts 数组提取数据。
+- 如果首页没有标准的 <time> 或文章列表标签，请检查页面里的内联 script，看看是否存在类似 `const { types = [], posts = [] } = {...}` 或 `const timelineData = {...}` 的结构。
+- 找到后请从其 posts 数组提取数据。
 - 输出时先告诉我：
   1. 时间线数据具体藏在哪
   2. 文章字段是什么结构
@@ -73,4 +73,4 @@ GitHub Actions 已内置自动内容刷新流程，会定时更新文章和仓�
 - 修改后运行生成脚本验证结果。
 ```
 
-对于当前这个博客，时间线数据就在首页内联脚本的 `timelineData.posts` 里。
+对于当前这个博客，时间线数据就在首页内联脚本的 `const { types = [], posts = [] } = {...}` 里，`posts` 数组同时包含 `type: "article"` 与 `type: "event"` 的条目。

@@ -15,7 +15,7 @@ const Hero = () => {
       <div className="py-4">
         <div className="space-y-6">
           <div className="space-y-3">
-            <p className="text-xs font-medium uppercase tracking-[0.3em] text-muted">{profile.handle}.top</p>
+            <p className="text-xs font-medium uppercase tracking-[0.3em] text-muted">{new URL(profile.siteUrl).host}</p>
             <h1 className="text-4xl font-semibold tracking-tight text-text sm:text-5xl">{profile.siteName}</h1>
             <p className="max-w-2xl text-sm leading-7 text-muted sm:text-base">
               {profile.intro}
