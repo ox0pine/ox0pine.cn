@@ -7,7 +7,7 @@ export interface SiteContent {
 }
 
 export const siteContent: SiteContent = {
-  "generatedAt": "2026-11-21T04:56:24.423Z",
+  "generatedAt": "2026-11-22T04:16:45.971Z",
   "articles": [
     {
       "title": "感谢 mygo，也感谢 mygo！！！",
@@ -45,7 +45,7 @@ export const siteContent: SiteContent = {
       "title": "mojian",
       "href": "https://github.com/ox0pine/mojian",
       "description": "A quiet text editor for plain files: native tabs, split panes, terminals, Git and SSH projects. Built with MyGo for macOS, Linux and Windows.",
-      "updatedAt": "2026-11-20"
+      "updatedAt": "2026-11-22"
     },
     {
       "title": "ox0pine",
