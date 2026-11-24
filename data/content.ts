@@ -7,7 +7,7 @@ export interface SiteContent {
 }
 
 export const siteContent: SiteContent = {
-  "generatedAt": "2026-11-23T04:55:31.442Z",
+  "generatedAt": "2026-11-24T07:44:12.502Z",
   "articles": [
     {
       "title": "感谢 mygo，也感谢 mygo！！！",
@@ -42,6 +42,12 @@ export const siteContent: SiteContent = {
   ],
   "tools": [
     {
+      "title": "RepoPilot",
+      "href": "https://github.com/ox0pine/RepoPilot",
+      "description": "Self-hosted AI coding workbench that turns GitHub issues into reviewable code changes.",
+      "updatedAt": "2026-11-23"
+    },
+    {
       "title": "mojian",
       "href": "https://github.com/ox0pine/mojian",
       "description": "A quiet text editor for plain files: native tabs, split panes, terminals, Git and SSH projects. Built with MyGo for macOS, Linux and Windows.",
@@ -64,12 +70,6 @@ export const siteContent: SiteContent = {
       "href": "https://github.com/ox0pine/ox0pine.cn",
       "description": "一个使用 React、Vite 和 Base UI 搭建的个人主页，展示最近文章与工具。「没错，正是这个页面，Github Action每天都会抓取最新的文章和仓库。」",
       "updatedAt": "2026-11-12"
-    },
-    {
-      "title": "RepoPilot",
-      "href": "https://github.com/ox0pine/RepoPilot",
-      "description": "🤖 自托管 AI 编码工作台，将 GitHub Issue 转化为可审阅的代码变更，支持人工审批、Docker 隔离执行与补丁交付。 | 🤖 A self-hosted AI coding workbench that turns GitHub issues into reviewable code changes, with human approval, Docker-isolated execution, and patch delivery.",
-      "updatedAt": "2026-11-03"
     }
   ]
 };
