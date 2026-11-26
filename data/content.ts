@@ -7,7 +7,7 @@ export interface SiteContent {
 }
 
 export const siteContent: SiteContent = {
-  "generatedAt": "2026-11-25T06:16:03.753Z",
+  "generatedAt": "2026-11-26T06:07:43.091Z",
   "articles": [
     {
       "title": "感谢 mygo，也感谢 mygo！！！",
@@ -42,16 +42,16 @@ export const siteContent: SiteContent = {
   ],
   "tools": [
     {
+      "title": "mojian",
+      "href": "https://github.com/ox0pine/mojian",
+      "description": "A quiet text editor for plain files: native tabs, split panes, terminals, Git and SSH projects. Built with MyGo for macOS, Linux and Windows.",
+      "updatedAt": "2026-11-25"
+    },
+    {
       "title": "RepoPilot",
       "href": "https://github.com/ox0pine/RepoPilot",
       "description": "Self-hosted AI coding workbench that turns GitHub issues into reviewable code changes.",
       "updatedAt": "2026-11-23"
-    },
-    {
-      "title": "mojian",
-      "href": "https://github.com/ox0pine/mojian",
-      "description": "A quiet text editor for plain files: native tabs, split panes, terminals, Git and SSH projects. Built with MyGo for macOS, Linux and Windows.",
-      "updatedAt": "2026-11-22"
     },
     {
       "title": "ox0pine",
