@@ -7,7 +7,7 @@ export interface SiteContent {
 }
 
 export const siteContent: SiteContent = {
-  "generatedAt": "2026-11-27T05:58:27.779Z",
+  "generatedAt": "2026-11-28T05:40:03.040Z",
   "articles": [
     {
       "title": "感谢 mygo，也感谢 mygo！！！",
